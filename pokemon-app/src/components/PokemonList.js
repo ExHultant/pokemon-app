@@ -54,18 +54,17 @@ export const PokemonList = () => {
                 key={pokemon.name}
                 name={pokemon.name}
                 onClick={() => {
-                  console.log(pokemon);
                   handlePokemonClick(pokemon.url)
                 }}
               />
             ))}
           </ul>
-          <button onClick={handlePreviousPage}>Anterior</button>
-          <button onClick={handleNextPage}>Siguiente</button>
+          <button onClick={handlePreviousPage} className="">Anterior</button>
+          <button onClick={handleNextPage} className="">Siguiente</button>
         </div>
         <div className="col-lg-9">
           <h1>Pokemon Details</h1>
-          {/* <PokemonDetails pokemonId={selectedPokemonId} /> */}
+          <PokemonDetails pokemonId={selectedPokemonId} />
         </div>
       </div>
     </div>
