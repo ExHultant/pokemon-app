@@ -3,7 +3,7 @@ import {PokemonList} from './components/PokemonList';
 function App() {
   return (
     <>
-    <PokemonList></PokemonList>
+    <PokemonList />
     </>
   );
 }
