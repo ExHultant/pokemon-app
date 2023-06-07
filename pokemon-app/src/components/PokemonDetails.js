@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from 'react';
 
-export const PokemonDetails = ({ match }) => {
+
+const PokemonDetails = ({ pokemonId }) => {
+    console.log(pokemonId);
+
   const [pokemonDetails, setPokemonDetails] = useState(null);
-  const pokemonId = match.params.id;
 
   useEffect(() => {
     const fetchPokemonDetails = async () => {
-      try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
-        const data = await response.json();
-        setPokemonDetails(data);
+      try {    
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId.params.url}`);
+            const data = await response.json();
+            setPokemonDetails(data);
       } catch (error) {
         console.log('Error fetching Pokemon details:', error);
       }
     };
 
     fetchPokemonDetails();
-  }, [pokemonId]);
+  }, []);
 
   if (!pokemonDetails) {
-    return <div>Loading...</div>;
+    return <div>Hola</div>;
   }
 
   return (
@@ -31,3 +33,4 @@ export const PokemonDetails = ({ match }) => {
     </div>
   );
 };
+export default PokemonDetails;
