@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg-pokemon {
+  background-color: #f44336; /* Color de fondo de Pokémon */
+}
+
+.text-pokemon {
+  color: #ffffff; /* Color de texto para Pokémon */
+  font-family: 'PokemonFont', sans-serif; /* Fuente de Pokémon */
+}
+
+.btn-pokemon {
+  background-color: #f44336; /* Color de fondo de los botones */
+  color: #ffffff; /* Color de texto para los botones */
+  margin-right: 10px; /* Espacio a la derecha de los botones */
+}

@@ -46,8 +46,8 @@ export const PokemonList = () => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-lg-3">
-          <h1>Pokémon List</h1>
+        <div className="col-lg-3 bg-pokemon">
+          <h1 className="text-pokemon">Pokémon List</h1>
           <ul className="list-group">
             {pokemonList.slice(startIndex, endIndex).map((pokemon) => (
               <Pokemon
@@ -59,8 +59,8 @@ export const PokemonList = () => {
               />
             ))}
           </ul>
-          <button onClick={handlePreviousPage} className="">Anterior</button>
-          <button onClick={handleNextPage} className="">Siguiente</button>
+          <button onClick={handlePreviousPage} className="btn btn-pokemon">Previous</button>
+          <button onClick={handleNextPage} className="btn btn-pokemon">Next</button>
         </div>
         <div className="col-lg-9">
           <h1>Pokemon Details</h1>

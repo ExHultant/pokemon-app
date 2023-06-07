@@ -9,7 +9,7 @@ const PokemonDetails = ({ pokemonId }) => {
   useEffect(() => {
     const fetchPokemonDetails = async () => {
       try {    
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId.params.url}`);
+            const response = await fetch(pokemonId);
             const data = await response.json();
             setPokemonDetails(data);
       } catch (error) {
@@ -18,18 +18,21 @@ const PokemonDetails = ({ pokemonId }) => {
     };
 
     fetchPokemonDetails();
-  }, []);
+  }, [pokemonId]);
 
   if (!pokemonDetails) {
-    return <div>Hola</div>;
+    return <div>Loading...</div>;
   }
-
+console.log(pokemonDetails);
   return (
     <div>
-      <h2>{pokemonDetails.name}</h2>
+      <h3>{pokemonDetails.name.toUpperCase()}</h3>
       <p>Weight: {pokemonDetails.weight}</p>
       <p>Height: {pokemonDetails.height}</p>
-      <p>Abilities: {pokemonDetails.abilities.map((ability) => ability.name).join(', ')}</p>
+      <p>Abilities: {pokemonDetails.abilities.map(({ability}) => ability.name).join(', ')}</p> 
+      <p>Type: {pokemonDetails.types.map(({type}) => type.name).join(', ')}</p> 
+      <p>ID: {pokemonDetails.id}</p>
+      <p>Base XP: {pokemonDetails.base_experience}</p> 
     </div>
   );
 };
